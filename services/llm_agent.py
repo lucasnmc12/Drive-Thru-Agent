@@ -1,6 +1,8 @@
 import google.generativeai as genai
 from dotenv import load_dotenv
 import os
+import requests
+
 
 load_dotenv() 
 
@@ -16,14 +18,45 @@ conversa = modelo.start_chat(history = [
 ])
 
 def obter_resposta(texto_cliente):
-    resposta = conversa.send_message(f"""A seguinte frase foi dita pelo cliente:
-                                     
-    "{texto_cliente}"
 
-        1. Continue a conversa normalmente, como atendente de drive-thru.
-        2. Ao final da sua resposta, diga: [ENCERRAR=sim] se o cliente deu a entender que deseja encerrar o pedido, ou [ENCERRAR=nao] se não deu.
-        Responda de forma educada como sempre.
-        """)
+    # busca semantica nos produtos
+    try:
+        resposta_busca = requests.post(
+            "http://localhost:8000/search",
+            json={"query": texto_cliente, "limite": 3}
+        )
+        produtos = resposta_busca.json()
+        print("🧪 produtos:", produtos)
+        print("📦 tipo:", type(produtos))
+    except Exception as e:
+        produtos = []
+        print("Erro na busca semantica:", e)
+
+
+    # 🧾 Monta contexto de produtos encontrados
+    if produtos:
+        produtos_texto = "\n".join([
+            f"- {p['nome']}: {p['descricao']} (R${p['preco']})" for p in produtos
+        ])
+        contexto_produtos = f"\nEsses são os produtos mais relevantes para o pedido:\n{produtos_texto}\n"
+    else:
+        contexto_produtos = "\n(Nenhum produto relevante foi encontrado.)"
+
+        # ✨ Prompt para o modelo
+    prompt = f"""A seguinte frase foi dita pelo cliente:
+
+        "{texto_cliente}"
+
+        {contexto_produtos}
+
+        1. Use os produtos listados acima como base para entender e responder.
+        2. Continue a conversa como um atendente de drive-thru.
+        3. Ao final da resposta, diga: [ENCERRAR=sim] se o cliente quiser encerrar o pedido, ou [ENCERRAR=nao] caso contrário.
+        Responda de forma simpática e clara.
+        """
+
+        
+    resposta = conversa.send_message(prompt)
     
     conteudo = resposta.text
     resposta_limpa = conteudo.replace("[ENCERRAR=sim]", "").replace("[ENCERRAR=nao]", "").strip()

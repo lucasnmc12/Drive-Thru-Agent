@@ -3,6 +3,7 @@ from services.text_utils.speech_to_text import transcrever
 from services.llm_agent import obter_resposta
 from services.text_utils.text_to_speech import falar
 
+
 print("🤖 Atendente IA iniciado. Diga 'encerrar pedido' para sair.")
 
 confirmando_encerramento = False
