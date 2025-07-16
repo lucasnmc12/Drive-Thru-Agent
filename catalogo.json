@@ -1,0 +1,160 @@
+[
+  {
+    "nome": "Big Mac",
+    "preco": 26.90,
+    "descricao": "Dois hambúrgueres 100% bovina, alface americana, queijo cheddar, molho especial, cebola, picles e pão com gergelim.",
+    "categoria": "principal"
+  },
+  {
+    "nome": "Cheeseburger",
+    "preco": 13.90,
+    "descricao": "Hambúrguer 100% bovina, queijo cheddar, cebola e picles.",
+    "categoria": "principal"
+  },
+  {
+    "nome": "Quarterão com Queijo",
+    "preco": 22.90,
+    "descricao": "Hambúrguer 100% bovina, queijo cheddar, cebola, picles, ketchup e mostarda.",
+    "categoria": "principal"
+  },
+  {
+    "nome": "McNífico Bacon",
+    "preco": 28.90,
+    "descricao": "Hambúrguer bovina com bacon, alface, cebola, queijo cheddar, tomate e molhos especiais.",
+    "categoria": "principal"
+  },
+  {
+    "nome": "Cheddar McMelt",
+    "preco": 24.90,
+    "descricao": "Hambúrguer bovina, molho lácteo de cheddar, cebola ao shoyu e pão escuro com gergelim.",
+    "categoria": "principal"
+  },
+  {
+    "nome": "McChicken",
+    "preco": 20.90,
+    "descricao": "Hambúrguer de frango empanado com alface e maionese.",
+    "categoria": "principal"
+  },
+  {
+    "nome": "McFritas Pequena",
+    "preco": 11.00,
+    "descricao": "Batata frita média, crocante e salgada.",
+    "categoria": "acompanhamento"
+  },
+  {
+    "nome": "McFritas Média",
+    "preco": 11.00,
+    "descricao": "Batata frita média, crocante e salgada.",
+    "categoria": "acompanhamento"
+  },
+  {
+    "nome": "McFritas Grande",
+    "preco": 15.00,
+    "descricao": "Batata frita grande, crocante e salgada.",
+    "categoria": "acompanhamento"
+  },
+  {
+    "nome": "Chicken McNuggets 10 unidades",
+    "preco": 18.50,
+    "descricao": "10 unidades de nuggets de frango crocantes.",
+    "categoria": "acompanhamento"
+  },
+  {
+    "nome": "Molho Barbecue",
+    "preco": 2.50,
+    "descricao": "Molho barbecue para acompanhamento.",
+    "categoria": "acompanhamento"
+  },
+  {
+    "nome": "Refrigerante 500 ml",
+    "preco": 7.00,
+    "descricao": "Coca-Cola, Guaraná ou Fanta, 500 ml.",
+    "categoria": "bebida"
+  },
+  {
+    "nome": "Coca‑Cola Zero 500 ml",
+    "preco": 7.00,
+    "descricao": "Coca‑Cola Zero, 500 ml.",
+    "categoria": "bebida"
+  },
+  {
+    "nome": "Água Mineral",
+    "preco": 5.00,
+    "descricao": "Água mineral sem gás.",
+    "categoria": "bebida"
+  },
+  {
+    "nome": "Suco Del Valle Laranja 500 ml",
+    "preco": 8.00,
+    "descricao": "Suco natural Del Valle sabor laranja, 500 ml.",
+    "categoria": "bebida"
+  },
+  {
+    "nome": "McFlurry Oreo",
+    "preco": 13.00,
+    "descricao": "Sorvete misturado com biscoitos Oreo.",
+    "categoria": "sobremesa"
+  },
+  {
+    "nome": "Casquinha Super Chocolate",
+    "preco": 9.00,
+    "descricao": "Casquinha recheada com calda e cobertura de chocolate.",
+    "categoria": "sobremesa"
+  },
+  {
+    "nome": "McShake Morango",
+    "preco": 11.00,
+    "descricao": "Milkshake sabor morango.",
+    "categoria": "sobremesa"
+  },
+  {
+    "nome": "Sundae Chocolate",
+    "preco": 8.00,
+    "descricao": "Sorvete com calda de chocolate.",
+    "categoria": "sobremesa"
+  },
+  {
+    "nome": "Combo Big Mac",
+    "preco": 36.90,
+    "descricao": "Big Mac + McFritas média + refrigerante 500 ml.",
+    "categoria": "combo",
+    "itens": [
+      "Big Mac",
+      "McFritas Média",
+      "Refrigerante 500 ml"
+    ]
+  },
+  {
+    "nome": "Combo Quarteirão",
+    "preco": 33.90,
+    "descricao": "Quarterão com Queijo + McFritas média + refrigerante.",
+    "categoria": "combo",
+    "itens": [
+      "Quarterão com Queijo",
+      "McFritas Média",
+      "Refrigerante 500 ml"
+    ]
+  },
+  {
+    "nome": "Combo McNífico Bacon",
+    "preco": 38.90,
+    "descricao": "McNífico Bacon + McFritas média + refrigerante.",
+    "categoria": "combo",
+    "itens": [
+      "McNífico Bacon",
+      "McFritas Média",
+      "Refrigerante 500 ml"
+    ]
+  },
+  {
+    "nome": "Combo McChicken",
+    "preco": 34.90,
+    "descricao": "McChicken + McFritas média + refrigerante.",
+    "categoria": "combo",
+    "itens": [
+      "McChicken",
+      "McFritas Média",
+      "Refrigerante 500 ml"
+    ]
+  }
+]
