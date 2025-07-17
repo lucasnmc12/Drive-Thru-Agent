@@ -2,6 +2,8 @@ from services.microphone import ouvir_microfone
 from services.text_utils.speech_to_text import transcrever
 from services.llm_agent import obter_resposta
 from services.text_utils.text_to_speech import falar
+from services.text_utils.sanitize_text import limpar_texto_para_fala
+
 
 
 print("🤖 Atendente IA iniciado. Diga 'encerrar pedido' para sair.")
@@ -29,7 +31,11 @@ while True:
         
     resposta, quer_encerrar = obter_resposta(texto)
     print(""f"🤖 Agente: {resposta}""")
-    falar(resposta)
+
+    fala_formatada = limpar_texto_para_fala(resposta)
+    falar(fala_formatada)
+    # print("🧹 Resposta limpa:", fala_formatada)
+
 
     if quer_encerrar:
         confirmando_encerramento = True
