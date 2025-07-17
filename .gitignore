@@ -1,0 +1,35 @@
+# Ambiente virtual
+.venv/
+venv/
+
+# Arquivos Python compilados
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Arquivos de log e temporários
+*.log
+*.tmp
+*.swp
+
+# Arquivos de configuração locais
+.env
+.python-version
+uv.lock
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Cache de ferramentas e pacotes
+.cache/
+.mypy_cache/
+.pytest_cache/
+coverage/
+htmlcov/
+dist/
+build/
+
+# VSCode
+.vscode/
