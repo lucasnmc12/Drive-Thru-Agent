@@ -33,9 +33,8 @@ while True:
     print(""f"🤖 Agente: {resposta}""")
 
     fala_formatada = limpar_texto_para_fala(resposta)
-    falar(fala_formatada)
-    # print("🧹 Resposta limpa:", fala_formatada)
-
+    falar (fala_formatada)
+    #print(f"Texto limpo:{fala_formatada}")
 
     if quer_encerrar:
         confirmando_encerramento = True

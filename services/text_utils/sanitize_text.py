@@ -10,6 +10,10 @@ def limpar_texto_para_fala(texto):
 
     texto = re.sub(r"(R\$|R)?\s?(\d+)[,.](\d{2})", lambda m: f"{m.group(2)} reais e {m.group(3)}", texto)
 
+    # Converte "Mc" ou "mc" para "mec"
+    texto = re.sub(r"\b[Mm]c", "mec", texto)
+    texto = re.sub(r"\b[Mm]ac", "mec", texto)
+
     # Remove repetições de pontuação desnecessária
     texto = re.sub(r"([,.!?])\1+", r"\1", texto)
 
