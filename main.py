@@ -3,6 +3,9 @@ from services.text_utils.speech_to_text import transcrever
 from services.llm_agent import obter_resposta
 from services.text_utils.text_to_speech import falar
 from services.text_utils.sanitize_text import limpar_texto_para_fala
+from services.text_utils.kokoro_tts import falar_com_kokoro
+from services.text_utils.kokoro_tts import pyaudio_instance
+
 
 
 
@@ -33,11 +36,13 @@ while True:
     print(""f"🤖 Agente: {resposta}""")
 
     fala_formatada = limpar_texto_para_fala(resposta)
-    falar (fala_formatada)
+    falar_com_kokoro (fala_formatada)
     #print(f"Texto limpo:{fala_formatada}")
 
     if quer_encerrar:
         confirmando_encerramento = True
         falar ("Você deseja realmente encerrar o pedido?")
+
+        pyaudio_instance.terminate()
 
     
